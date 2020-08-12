@@ -15,14 +15,14 @@
 
 <script>
 	export default {
-		name: "Swiper",
+    name: "Swiper",
     props: {
       interval: {
-		    type: Number,
+        type: Number,
         default: 3000
       },
       animDuration: {
-		    type: Number,
+        type: Number,
         default: 300
       },
       moveRatio: {
@@ -35,7 +35,7 @@
       }
     },
     data: function () {
-		  return {
+        return {
         slideCount: 0, // 元素个数
         totalWidth: 0, // swiper的宽度
         swiperStyle: {}, // swiper样式
@@ -53,13 +53,13 @@
       }, 3000)
     },
     methods: {
-		  /**
+      /**
        * 定时器操作
        */
       startTimer: function () {
-		    this.playTimer = window.setInterval(() => {
-		      this.currentIndex++;
-		      this.scrollContent(-this.currentIndex * this.totalWidth);
+          this.playTimer = window.setInterval(() => {
+            this.currentIndex++;
+            this.scrollContent(-this.currentIndex * this.totalWidth);
         }, this.interval)
       },
       stopTimer: function () {
@@ -116,7 +116,7 @@
       /**
        * 操作DOM, 在DOM前后添加Slide
        */
-		  handleDom: function () {
+        handleDom: function () {
         // 1.获取要操作的元素
         let swiperEl = document.querySelector('.swiper');
         let slidesEls = swiperEl.getElementsByClassName('slide');
@@ -163,7 +163,7 @@
         this.setTransform(moveDistance);
       },
 
-      touchEnd: function (e) {
+      touchEnd: function () {
         // 1.获取移动的距离
         let currentMove = Math.abs(this.distance);
 

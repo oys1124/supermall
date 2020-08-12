@@ -7,8 +7,6 @@
 <script>
     export default {
         name: "BackTop",
-
-
     }
 </script>
 
